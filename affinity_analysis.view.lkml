@@ -239,8 +239,8 @@ view: order_purchase_affinity {
   dimension: product_a_image {
     type: string
     sql: ${product_a} ;;
-    #### TO DO: Replace with link to image OR refer to [...] to auto-generate image for your products!
-    html: {{rendered_value}} - <img src="https://europe-west1-ikea-looker-poc-2019.cloudfunctions.net/helloworld?q={{rendered_value | encode_uri }}" height=100 /> ;;
+    #### TO DO: Replace with link to image OR refer to https://docs.google.com/document/d/1rCe0MiMkiKnOHhv1tpvIOeLja_oyJwNg_oHqG_IU-oQ/edit?usp=sharing to auto-generate images for your products!
+    html: {{rendered_value}} - <img src="https://us-central1-image-search-project-241014.cloudfunctions.net/imageSearch?q={{rendered_value | encode_uri }}" height=100 /> ;;
   }
 
   dimension: product_b {
