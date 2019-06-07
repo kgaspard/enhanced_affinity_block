@@ -2,6 +2,7 @@
 connection: "snowlooker"
 
 include: "*.view.lkml"                       # include all views in this project
+include: "*.dashboard.lookml"                       # include all dashboards in this project
 
 #### TO DO: If persisting the order_items_base view, edit this datagroup to the frequency at which you want to persist the view
 datagroup: daily {

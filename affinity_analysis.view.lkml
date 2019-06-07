@@ -232,7 +232,7 @@ view: order_purchase_affinity {
     link: {
       label: "Focus on {{rendered_value}}"
        #### TO DO: Replace "/3" with id of the [...] dashboards
-      url: "/dashboards/3?Focus%20Product={{ value | encode_uri }}&Product%20Level={{ _filters['order_items_base.product_level'] | url_encode }}&Analysis%20Timeframe={{ _filters['order_purchase_affinity.affinity_timeframe'] | url_encode }}&Store%20Number={{ _filters['order_purchase_affinity.store_number'] | url_encode }}"
+      url: "/dashboards/retail_model::item_affinity_analysis?Focus%20Product={{ value | encode_uri }}&Product%20Level={{ _filters['order_items_base.product_level'] | url_encode }}&Analysis%20Timeframe={{ _filters['order_purchase_affinity.affinity_timeframe'] | url_encode }}&Store%20Number={{ _filters['order_purchase_affinity.store_number'] | url_encode }}"
     }
   }
 
@@ -240,12 +240,19 @@ view: order_purchase_affinity {
     type: string
     sql: ${product_a} ;;
     #### TO DO: Replace with link to image OR refer to https://docs.google.com/document/d/1rCe0MiMkiKnOHhv1tpvIOeLja_oyJwNg_oHqG_IU-oQ/edit?usp=sharing to auto-generate images for your products!
-    html: {{rendered_value}} - <img src="https://us-central1-image-search-project-241014.cloudfunctions.net/imageSearch?q={{rendered_value | encode_uri }}" height=100 /> ;;
+    html: <img src="https://us-central1-image-search-project-241014.cloudfunctions.net/imageSearch?q={{rendered_value | encode_uri }}" height=100 /> ;;
   }
 
   dimension: product_b {
     type: string
     sql: ${TABLE}.product_b ;;
+  }
+
+  dimension: product_b_image {
+    type: string
+    sql: ${product_b} ;;
+    #### TO DO: Replace with link to image OR refer to https://docs.google.com/document/d/1rCe0MiMkiKnOHhv1tpvIOeLja_oyJwNg_oHqG_IU-oQ/edit?usp=sharing to auto-generate images for your products!
+    html: <img src="https://us-central1-image-search-project-241014.cloudfunctions.net/imageSearch?q={{rendered_value | encode_uri }}" height=100 /> ;;
   }
 
   dimension: joint_order_count {
